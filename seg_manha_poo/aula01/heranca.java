@@ -1,8 +1,11 @@
 package seg_manha_poo.aula01;
 
+
 class Pessoa {
     private String nome;
     private int idade;
+
+    public Pessoa(){}
 
     public Pessoa(String nome, int idade) {
         this.nome = nome;
@@ -17,9 +20,22 @@ class Pessoa {
         return idade;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public void setIdade(int  idade){
+        this.idade = idade;
+    }
+
+    // Método polimórfico de sobreposição
+    public String getInfoAdicional() {
+        return "N/A";  // Implementação padrão
+    }
+
     @Override
     public String toString() {
-        return "Nome: " + nome + "\nIdade: " + idade;
+        return "Nome: " + nome + "\nIdade: " + idade + "\nInformação Adicional: " + getInfoAdicional();
     }
 }
 
@@ -35,9 +51,14 @@ class Aluno extends Pessoa {
         return matricula;
     }
 
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    // Sobreposição do método getInfoAdicional
     @Override
-    public String toString() {
-        return super.toString() + "\nMatrícula: " + matricula;
+    public String getInfoAdicional() {
+        return "Matricula: " + matricula;
     }
 }
 
@@ -53,9 +74,14 @@ class Professor extends Pessoa {
         return disciplina;
     }
 
+    public void  setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+
+    // Sobreposição do método getInfoAdicional
     @Override
-    public String toString() {
-        return super.toString() + "\nDisciplina: " + disciplina;
+    public String getInfoAdicional() {
+        return "Disciplina: " + disciplina;
     }
 }
 
@@ -66,5 +92,13 @@ public class heranca {
 
         System.out.println("Informações do Aluno:\n" + aluno.toString() + "\n");
         System.out.println("Informações do Professor:\n" + professor.toString());
+
+        Aluno[] alunos = new Aluno[2];
+        alunos[0] = new Aluno("null", 0, 0);
+        alunos[1] = new Aluno("Raphael", 19,  67890);
+
+        for (Aluno a : alunos){
+            System.out.println(a.toString());
+        }
     }
 }

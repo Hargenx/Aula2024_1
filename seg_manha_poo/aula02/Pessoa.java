@@ -1,4 +1,4 @@
-package seg_manha_poo.aula01;
+package seg_manha_poo.aula02;
 
 class Pessoa {
     private String nome;
@@ -28,21 +28,13 @@ class Pessoa {
         this.idade = idade;
     }
 
+    // Método polimórfico de sobreposição
+    public String getInfoAdicional() {
+        return "N/A"; // Implementação padrão
+    }
+
     @Override
     public String toString() {
         return "Nome: " + nome + "\nIdade: " + idade;
-    }
-    
-
-    public static void main(String[] args) {
-        Pessoa p1 = new Pessoa("Caroline", 30);
-        System.out.println(p1.toString());
-        Pessoa pessoa = new Pessoa();
-        pessoa.setNome("Raphael");
-        pessoa.setIdade(39);
-
-        System.out.println("Nome: " + pessoa.getNome());
-        System.out.println("Idade: " + pessoa.getIdade());
-
     }
 }
