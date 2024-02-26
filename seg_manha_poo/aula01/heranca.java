@@ -94,7 +94,7 @@ public class heranca {
         System.out.println("Informações do Professor:\n" + professor.toString());
 
         Aluno[] alunos = new Aluno[2];
-        alunos[0] = new Aluno("null", 0, 0);
+        alunos[0] = new Aluno("Carol", 18, 67889);
         alunos[1] = new Aluno("Raphael", 19,  67890);
 
         for (Aluno a : alunos){
