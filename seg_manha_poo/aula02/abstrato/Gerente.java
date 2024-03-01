@@ -1,6 +1,5 @@
 package seg_manha_poo.aula02.abstrato;
 
-// Classe concreta representando um gerente
 class Gerente extends Funcionario {
     private double salarioMensal;
 

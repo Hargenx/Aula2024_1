@@ -1,6 +1,5 @@
 package seg_manha_poo.aula02.abstrato;
 
-// Classe abstrata representando um funcionário
 abstract class Funcionario implements Pagamento {
     private String nome;
     private int idade;

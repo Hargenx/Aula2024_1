@@ -1,6 +1,5 @@
 package seg_manha_poo.aula02.abstrato;
 
-// Classe concreta representando um desenvolvedor
 class Desenvolvedor extends Funcionario {
     private int horasTrabalhadas;
     private double salarioHora;
