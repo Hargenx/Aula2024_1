@@ -17,4 +17,9 @@ class Aluno extends Pessoa {
     public String getInfoAdicional() {
         return "Matrícula: " + matricula;
     }
+
+    @Override
+    public void apresentar() {
+        System.out.println("Olá, eu sou o aluno " + getNome() + " e minha matrícula é " + matricula + "!");
+    }
 }

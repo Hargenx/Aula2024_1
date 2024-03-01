@@ -17,4 +17,8 @@ class Professor extends Pessoa {
     public String getInfoAdicional() {
         return "Disciplina: " + disciplina;
     }
+    @Override
+    public void apresentar() {
+        System.out.println("Olá, eu sou o professor " + getNome() + " e leciono a disciplina de " + disciplina + "!");
+    }
 }

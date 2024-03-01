@@ -1,6 +1,6 @@
 package seg_manha_poo.aula02;
 
-class Pessoa {
+class Pessoa implements Apresentavel{
     private String nome;
     private int idade;
 
@@ -31,6 +31,16 @@ class Pessoa {
     // Método polimórfico de sobreposição
     public String getInfoAdicional() {
         return "N/A"; // Implementação padrão
+    }
+
+    @Override
+    public void apresentar() {
+        System.out.println("Olá, eu sou " + nome + "!");
+    }
+
+    // Método sobrecarregado para apresentação com idade
+    public void apresentar(int novaIdade) {
+        System.out.println("Olá, eu sou " + nome + " e tenho " + novaIdade + " anos!");
     }
 
     @Override
