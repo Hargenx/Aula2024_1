@@ -1,4 +1,4 @@
-package seg_manha_poo.agrup_objeto;
+package poo.agrup_objeto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,8 +72,8 @@ class Projeto {
 
     public static void main(String[] args) {
         // Criando funcionários
-        Funcionario desenvolvedor1 = new Funcionario("Alice");
-        Funcionario desenvolvedor2 = new Funcionario("Bob");
+        Funcionario desenvolvedor1 = new Funcionario("Raphael");
+        Funcionario desenvolvedor2 = new Funcionario("Caroline");
 
         // Criando tarefas
         Tarefa tarefa1 = new Tarefa("Implementar login");

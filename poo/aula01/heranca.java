@@ -1,4 +1,4 @@
-package seg_manha_poo.aula01;
+package poo.aula01;
 
 
 class Pessoa {

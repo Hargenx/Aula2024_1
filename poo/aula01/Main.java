@@ -1,4 +1,4 @@
-package seg_manha_poo.aula01;
+package poo.aula01;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package seg_manha_poo.agrup_objeto;
+package poo.agrup_objeto;
 
 import java.util.List;
 import java.util.Map;

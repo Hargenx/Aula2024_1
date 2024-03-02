@@ -1,4 +1,4 @@
-package seg_manha_poo.aula02.exercicio02;
+package poo.aula02.exercicio02;
 
 public class Main {
     public static void main(String[] args) {

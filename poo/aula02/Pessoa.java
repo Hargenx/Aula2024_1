@@ -1,4 +1,4 @@
-package seg_manha_poo.aula02;
+package poo.aula02;
 
 class Pessoa implements Apresentavel{
     private String nome;

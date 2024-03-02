@@ -1,4 +1,4 @@
-package seg_manha_poo.agrup_objeto;
+package poo.agrup_objeto;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -40,8 +40,10 @@ public class Restaurante {
         filaPedidos.add(pedido3);
 
         // Simulando a ação do chef retirando da fila e preparando
-        acoesChef.offer(filaPedidos.poll()); // Retira o primeiro pedido da fila e coloca na ação do chef
-        acoesChef.offer(filaPedidos.poll()); // Retira o segundo pedido da fila e coloca na ação do chef
+        // Retira o primeiro pedido da fila e coloca na ação do chef
+        acoesChef.offer(filaPedidos.poll()); 
+        // Retira o segundo pedido da fila e coloca na ação do chef
+        acoesChef.offer(filaPedidos.poll()); 
 
         // Exibindo informações
         System.out.println("Pratos Únicos Pedidos: " + pratosUnicos);

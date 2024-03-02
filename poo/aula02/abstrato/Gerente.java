@@ -1,4 +1,4 @@
-package seg_manha_poo.aula02.abstrato;
+package poo.aula02.abstrato;
 
 class Gerente extends Funcionario {
     private double salarioMensal;

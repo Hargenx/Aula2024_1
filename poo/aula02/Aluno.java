@@ -1,4 +1,4 @@
-package seg_manha_poo.aula02;
+package poo.aula02;
 
 class Aluno extends Pessoa {
     private int matricula;
