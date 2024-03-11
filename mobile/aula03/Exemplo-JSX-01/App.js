@@ -27,7 +27,7 @@ const App = () => {
       <View style={styles.section} id="sobre">
         <Text style={styles.sectionHeader}>Seção Sobre</Text>
         <Text>Conteúdo da seção Sobre.</Text>
-        <Text>{'\n'}{'\n'}{'\n'}{'\n'}{'\n'}</Text>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
       </View>
       <View style={styles.section} id="contato">
         <Text style={styles.sectionHeader}>Seção de Contato</Text>

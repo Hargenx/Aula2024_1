@@ -1,7 +1,7 @@
 package poo.aula02;
 
-// Interface que define o método apresentar()
 interface Apresentavel {
     void apresentar();
+    final int VALOR_MAXIMO = 100;
+    final String NOME_PADRAO = "Raphael";
 }
-
