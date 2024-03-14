@@ -1,0 +1,4 @@
+Entrada 500 
+saida 200
+saida 500
+acerto 200

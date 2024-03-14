@@ -1,7 +1,7 @@
 import re
 
 def validar_email(email):
-    padrao = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+    padrao = r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
     if re.match(padrao, email):
         return True
     else:

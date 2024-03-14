@@ -1,6 +1,6 @@
 import re
 texto = "O número de telefone de Raphael é (123) 456-7890."
-padrao = '\(\d{3}\) \d{3}-\d{4}'
+padrao = r'\(\d{3}\) \d{3}-\d{4}'
 # Padrão para números no formato (XXX) XXX-XXXX
 resultado = re.search(padrao, texto)
 if resultado:
