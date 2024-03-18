@@ -1,0 +1,6 @@
+https://www.flai.com.br/jonatas/pyspark-no-google-colab/
+https://github.com/LMAPcoder/Hadoop-on-Colab/blob/main/Hadoop_on_Colab.ipynb
+https://pnavaro.github.io/big-data/intro.html
+https://www.alura.com.br/artigos/iniciando-projeto-spark-no-colab
+https://github.com/pydantic/FastUI
+https://aws.amazon.com/pt/compare/the-difference-between-hadoop-vs-spark/#:~:text=Para%20armazenar%2C%20gerenciar%20e%20processar,para%20fornecer%20insights%20de%20negócios.
