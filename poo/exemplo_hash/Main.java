@@ -26,7 +26,7 @@ public class Main {
                 System.out.println("Option 0 - Exit program");
                 System.out.println("_______________________");
                 
-                System.out.print("Enter your choice here:");
+                System.out.print("Digite a opção: ");
                 opcao = sc.nextInt();
                 
                 switch (opcao) {
