@@ -7,7 +7,6 @@ ser usado para executar o script.'''
 from mrjob.job import MRJob
 
 class WordCount(MRJob):
-
     def mapper(self, _, line):
         # Remove espaços em branco à direita e à esquerda e divide a linha em palavras
         words = line.strip().lower().split()

@@ -1,6 +1,9 @@
 #!/usr/bin/env python
-
-from operator import itemgetter
+''' shebang ou hashbang. 
+Ele é uma convenção em sistemas Unix-like, 
+incluindo Linux e macOS, que indica ao 
+sistema operacional qual interpretador deve 
+ser usado para executar o script.'''
 import sys
 
 current_word = None
