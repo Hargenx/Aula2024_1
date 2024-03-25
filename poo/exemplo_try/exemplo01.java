@@ -2,6 +2,7 @@ public class exemplo01 {
     public static void main(String[] args) {
         try{
             try{
+                Object o = new Object();
                 System.out.println("Try bloco 01");
                 int num = 15/3;
                 System.out.println(num);
