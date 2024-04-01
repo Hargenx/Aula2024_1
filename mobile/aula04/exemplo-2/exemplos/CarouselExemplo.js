@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, ScrollView } from 'react-native';
-import styles from '../style/style';
-const CarouselExemplo = ({ goBack }) => {
+import styles from '../style/estilo';
+const CarouselExemplo = ({ voltaPara }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const paginas = [
         { backgroundColor: 'skyblue', text: 'Página 1' },
@@ -34,7 +34,7 @@ const CarouselExemplo = ({ goBack }) => {
             <Text style={styles.pageIndicator}>
                 Página {currentPage + 1} de {paginas.length}
             </Text>
-            <Button title="Voltar" onPress={goBack} />
+            <Button title="Voltar" onPress={voltaPara} />
         </View>
     );
 };
