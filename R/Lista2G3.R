@@ -1,3 +1,4 @@
+'''Monte Carlo é uma técnica estatística que utiliza amostragem aleatória para estimar resultados de interesse em problemas complexos.'''
 # Questão 1
 q1 <- function(n, m) {
   resultados <- replicate(m, sum(sample(c(0, 1), n, replace = TRUE)))
