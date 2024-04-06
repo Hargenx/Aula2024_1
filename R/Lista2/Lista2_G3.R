@@ -44,7 +44,8 @@ q2a <- function() {
 
 # Questão 2b
 #idem ao 2a usando MC. O método Monte Carlo é usado para obter uma aproximação empírica da distribuição da soma de 12 variáveis aleatórias uniformemente distribuídas.
-q2b <- function(n) {
+q2b <- function() {
+  n <- 12000
   x <- matrix(runif(n*12), ncol = 12)
   soma_x <- rowSums(x)
   media <- mean(soma_x)
@@ -54,7 +55,7 @@ q2b <- function(n) {
   hist(soma_x, breaks = "Freedman-Diaconis", xlab = "X", main = "Histograma da Soma de 12 VAs Uniformes")
 }
 #Explicação:
-#  x <- matrix(runif(n*12), ncol = 12): Aqui, estamos gerando uma matriz x de dimensões n por 12, onde cada elemento é uma amostra aleatória de uma variável uniforme no intervalo (0, 1). Isso é feito usando a função runif, que gera números aleatórios uniformemente distribuídos.
+#  x <- matrix(runif(n*12), ncol = 12): Aqui, estamos gerando uma matriz x de dimensões n (que foi setada em 12000) por 12, onde cada elemento é uma amostra aleatória de uma variável uniforme no intervalo (0, 1). Isso é feito usando a função runif, que gera números aleatórios uniformemente distribuídos.
 
 #  soma_x <- rowSums(x): Esta linha calcula a soma de cada linha da matriz x, ou seja, a soma das 12 variáveis aleatórias para cada uma das n amostras.
 
