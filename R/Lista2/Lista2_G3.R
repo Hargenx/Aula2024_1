@@ -1,10 +1,13 @@
-#  Monte Carlo é uma técnica estatística que utiliza amostragem aleatória para estimar resultados de interesse em problemas complexos.
+# Monte Carlo é uma técnica estatística que utiliza amostragem aleatória para estimar resultados de interesse em problemas complexos.
 
 #Questão 1
-#1-Crie o experimento computacional ”lancar uma moeda n vezes” repetido m vezes” e produza o histograma da do numero de sucessos em cada experimento. Repita o experimento e tire conclusoes sobre o efeito da amostragem.
+# Crie o experimento computacional ”lancar uma moeda n vezes” repetido m vezes” e produza o histograma da do numero de sucessos em cada experimento. Repita o experimento e tire conclusoes sobre o efeito da amostragem.
 q1 <- function(n, m) {
   resultados <- replicate(m, sum(sample(c(0, 1), n, replace = TRUE)))
-  hist(resultados, breaks = seq(0, n+1), xlab = "Número de Sucessos", main = "Histograma de Número de Sucessos")
+  hist(resultados,
+       breaks = seq(0, n+1), 
+       xlab = "Número de Sucessos", 
+       main = "Histograma de Número de Sucessos")
 }
 
 #Explicação:
@@ -18,16 +21,23 @@ q1 <- function(n, m) {
 
 
 #------------------------------------
-# Questão 2: 2- Seja X uma VA que  ́e obtida pela soma de 12 VAs uniformes (0,1):
+# Questão 2: Seja X uma VA que  ́e obtida pela soma de 12 VAs uniformes (0,1):
 
-#Questão 2a - Usando o TCL, obtenha uma aproximacao analitica para X: calcule a sua media, variancia e esboce um grafico dessa distribuicao.
+# Questão 2a - Usando o TCL, obtenha uma aproximacao analitica para X:
+# calcule a sua media, variancia e esboce um grafico dessa distribuicao.
 q2a <- function() {
   media <- 12 * 0.5
-  variancia <- 12 * (1/12) * (1/12)
+  variancia <- 12 * (1 / 12) * (1 / 12)
   cat("Média:", media, "\n")
   cat("Variância:", variancia, "\n")
-  # Gráfico da distribuição
-  curve(dnorm(x, mean = media, sd = sqrt(variancia)), from = 0, to = 12, xlab = "X", ylab = "Densidade", main = "Distribuição de X")
+  curve(dnorm(x,
+              mean = media,
+              sd = sqrt(variancia)),
+        from = 0,
+        to = 12,
+        xlab = "X",
+        ylab = "Densidade",
+        main = "Distribuição de X")
 }
 
 #Explicação:
@@ -52,7 +62,10 @@ q2b <- function() {
   variancia <- var(soma_x)
   cat("Média:", media, "\n")
   cat("Variância:", variancia, "\n")
-  hist(soma_x, breaks = "Freedman-Diaconis", xlab = "X", main = "Histograma da Soma de 12 VAs Uniformes")
+  hist(soma_x,
+       breaks = "Freedman-Diaconis",
+       xlab = "X",
+       main = "Histograma da Soma de 12 VAs Uniformes")
 }
 #Explicação:
 #  x <- matrix(runif(n*12), ncol = 12): Aqui, estamos gerando uma matriz x de dimensões n (que foi setada em 12000) por 12, onde cada elemento é uma amostra aleatória de uma variável uniforme no intervalo (0, 1). Isso é feito usando a função runif, que gera números aleatórios uniformemente distribuídos.
@@ -81,13 +94,16 @@ q3 <- function(n, m) {
   if (n < 5 || n > 30 || m < 5 || m > 30) {
     stop("Os parâmetros n e m devem estar entre 5 e 30.")
   }
-  x <- matrix(runif(n*m, 10, 30), ncol = m)
+  x <- matrix(runif(n * m, 10, 30), ncol = m)
   soma_x <- rowSums(x)
   media <- mean(soma_x)
   variancia <- var(soma_x)
   cat("Média:", media, "\n")
   cat("Variância:", variancia, "\n")
-  hist(soma_x, breaks = "FD", xlab = "X", main = "Histograma da Soma de Distribuições Triangulares")
+  hist(soma_x,
+       breaks = "FD",
+       xlab = "X",
+       main = "Histograma da Soma de Distribuições Triangulares")
 }
 #Explicação:
 #  x <- matrix(runif(n*m, 10, 30), ncol = m): Aqui, estamos gerando uma matriz x de dimensões n por m, onde cada elemento é uma amostra aleatória de uma distribuição uniforme no intervalo entre 10 e 30. Isso é feito usando a função runif, que gera números aleatórios uniformemente distribuídos dentro do intervalo especificado.
@@ -107,7 +123,10 @@ q4a <- function(n) {
   x <- rnorm(n)
   y <- rnorm(n)
   z <- x * y
-  hist(z, breaks = "FD", xlab = "Z", main = "Histograma do Produto de Duas VAs Normais")
+  hist(z,
+       breaks = "FD",
+       xlab = "Z",
+       main = "Histograma do Produto de Duas VAs Normais")
 }
 #Explicação:
 #  x <- rnorm(n): Aqui, estamos gerando n amostras aleatórias de uma distribuição normal padrão (média 0 e desvio padrão 1) e armazenando-as na variável x, e em y <- rnorm(n), o mesmo só que armazenado em y.
@@ -124,7 +143,10 @@ q4b <- function(n) {
   x <- rnorm(n)
   y <- rnorm(n)
   z <- x / y
-  hist(z, breaks = "FD", xlab = "Z", main = "Histograma do Quociente de Duas VAs Normais")
+  hist(z,
+       breaks = "FD",
+       xlab = "Z",
+       main = "Histograma do Quociente de Duas VAs Normais")
 }
 #Explicação:
 #  quociente Z = X/Y 
@@ -137,7 +159,10 @@ q4b <- function(n) {
 # Questão 4c - Maximo(Xi)(i = 2, 5, 10) que representa a funcao de probabilidade do maximo dentre i VAs cada uma delas seguindo uma Normal(0, 1).
 q4c <- function(n, i) {
   maximos <- apply(matrix(rnorm(n*i), ncol = i), 1, max)
-  hist(maximos, breaks = "FD", xlab = "Máximo", main = paste("Histograma do Máximo de", i, "VAs Normais"))
+  hist(maximos,
+       breaks = "FD",
+       xlab = "Máximo",
+       main = paste("Histograma do Máximo de", i, "VAs Normais"))
 }
 #Explicação:
 #  matrix(rnorm(n*i), ncol = i): Aqui, estamos gerando uma matriz com n linhas e i colunas, onde cada elemento é uma amostra aleatória de uma distribuição normal padrão (média 0 e desvio padrão 1). A função rnorm(n*i) gera n*i amostras aleatórias e a função matrix organiza essas amostras em uma matriz com i colunas.
@@ -153,7 +178,10 @@ q4c <- function(n, i) {
 # Questão 4d - χ2(n) = Pn1 X2i onde Xi ~ Normal(0, 1)(i = 1, 5, 10, 30).
 q4d <- function(n, m) {
   x_quadrado <- replicate(m, sum(rnorm(n)^2))
-  hist(x_quadrado, breaks = "FD", xlab = "χ^2", main = "Histograma da Distribuição χ^2")
+  hist(x_quadrado,
+       breaks = "FD",
+       xlab = "χ^2",
+       main = "Histograma da Distribuição χ^2")
 }
 #Explicação:
 #  rnorm(n)^2: Aqui, estamos gerando n amostras aleatórias de uma distribuição normal padrão (média 0 e desvio padrão 1) e elevando cada uma ao quadrado. Isso nos dá n variáveis aleatórias que seguem uma distribuição χ² com 1 grau de liberdade, porque cada amostra ao quadrado segue uma distribuição de chi-quadrado com 1 grau de liberdade.
@@ -173,7 +201,10 @@ q4d <- function(n, m) {
 # Questão 4e - 'Z = eN(0,1)
 q4e <- function(n) {
   z <- exp(rnorm(n))
-  hist(z, breaks = "FD", xlab = "Z", main = "Histograma da Distribuição Z = e^N(0,1)")
+  hist(z,
+       breaks = "FD",
+       xlab = "Z",
+       main = "Histograma da Distribuição Z = e^N(0,1)")
 }
 #Explicação:
 #  rnorm(n): Aqui, estamos gerando n amostras aleatórias de uma distribuição normal padrão (média 0 e desvio padrão 1).
