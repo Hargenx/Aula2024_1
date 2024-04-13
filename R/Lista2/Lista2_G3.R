@@ -5,19 +5,18 @@
 q1 <- function(n, m) {
   resultados <- replicate(m, sum(sample(c(0, 1), n, replace = TRUE)))
   hist(resultados,
-       breaks = seq(0, n+1), 
-       xlab = "Número de Sucessos", 
+       breaks = seq(0, n + 1),
+       xlab = "Número de Sucessos",
        main = "Histograma de Número de Sucessos")
 }
 
 #Explicação:
-#  sample(c(0, 1), n, replace = TRUE): Isso cria uma amostra aleatória de n lançamentos de uma moeda. O vetor c(0, 1) representa os possíveis resultados do lançamento (0 para cara e 1 para coroa), e o argumento replace = TRUE indica que os resultados são amostrados com substituição, o que significa que cada lançamento é independente dos outros.
-  
-#  hist(resultados, breaks = seq(0, n+1), xlab = "Número de Sucessos", main = "Histograma de Número de Sucessos"): Isso cria um histograma dos resultados, onde resultados é o vetor de valores que queremos agrupar no histograma. O argumento breaks define os limites dos intervalos do histograma. No caso, estamos usando seq(0, n+1) para garantir que cada possível número de sucessos seja representado em uma barra do histograma.
+# sample(c(0, 1), n, replace = TRUE): Isso cria uma amostra aleatória de n lançamentos de uma moeda. O vetor c(0, 1) representa os possíveis resultados do lançamento (0 para cara e 1 para coroa), e o argumento replace = TRUE indica que os resultados são amostrados com substituição, o que significa que cada lançamento é independente dos outros.
+
+# hist(resultados, breaks = seq(0, n+1), xlab = "Número de Sucessos", main = "Histograma de Número de Sucessos"): Isso cria um histograma dos resultados, onde resultados é o vetor de valores que queremos agrupar no histograma. O argumento breaks define os limites dos intervalos do histograma. No caso, estamos usando seq(0, n+1) para garantir que cada possível número de sucessos seja representado em uma barra do histograma.
 
 #Conclusão:
 #  A fórmula matemática básica aqui é simplesmente a contagem do número de sucessos em uma série de lançamentos de moeda, onde cada lançamento tem uma probabilidade de sucesso de 0.5. A soma desses sucessos em cada repetição do experimento é então usada para construir o histograma, que nos dá uma ideia da distribuição dos resultados possíveis.
- 
 
 
 #------------------------------------
@@ -56,7 +55,7 @@ q2a <- function() {
 #idem ao 2a usando MC. O método Monte Carlo é usado para obter uma aproximação empírica da distribuição da soma de 12 variáveis aleatórias uniformemente distribuídas.
 q2b <- function() {
   n <- 12000
-  x <- matrix(runif(n*12), ncol = 12)
+  x <- matrix(runif(n * 12), ncol = 12)
   soma_x <- rowSums(x)
   media <- mean(soma_x)
   variancia <- var(soma_x)
@@ -158,7 +157,7 @@ q4b <- function(n) {
 
 # Questão 4c - Maximo(Xi)(i = 2, 5, 10) que representa a funcao de probabilidade do maximo dentre i VAs cada uma delas seguindo uma Normal(0, 1).
 q4c <- function(n, i) {
-  maximos <- apply(matrix(rnorm(n*i), ncol = i), 1, max)
+  maximos <- apply(matrix(rnorm(n * i), ncol = i), 1, max)
   hist(maximos,
        breaks = "FD",
        xlab = "Máximo",
