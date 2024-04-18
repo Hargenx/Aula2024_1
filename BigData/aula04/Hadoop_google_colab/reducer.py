@@ -6,35 +6,35 @@ sistema operacional qual interpretador deve
 ser usado para executar o script.'''
 import sys
 
-current_word = None
-current_count = 0
-word = None
+palavra_atual = None
+contagem_atual = 0
+palavra = None
 
 # Lê a entrada de sys.stdin
-for line in sys.stdin:
+for linha in sys.stdin:
     # Remove espaços em branco à direita e à esquerda
-    line = line.strip()
+    linha = linha.strip()
 
     # Faz o parsing da entrada
-    word, count = line.split('\t', 1)
+    palavra, contagem = linha.split('\t', 1)
 
     # Converte a contagem para int
     try:
-        count = int(count)
+        contagem = int(contagem)
     except ValueError:
         # Se a contagem não for um número, ignora esta linha
         continue
 
     # Esta parte assume que os dados estão ordenados pelo shuffle/sort, o que é o caso padrão
-    if current_word == word:
-        current_count += count
+    if palavra_atual == palavra:
+        contagem_atual += contagem
     else:
-        if current_word:
+        if palavra_atual:
             # Emite a palavra anteriormente processada e sua contagem
-            print('%s\t%s' % (current_word, current_count))
-        current_count = count
-        current_word = word
+            print(f'{palavra_atual}\t{contagem_atual}')
+        contagem_atual = contagem
+        palavra_atual = palavra
 
 # Emite a última palavra se necessário
-if current_word == word:
-    print('%s\t%s' % (current_word, current_count))
+if palavra_atual == palavra:
+    print('%s\t%s' % (palavra_atual, contagem_atual))

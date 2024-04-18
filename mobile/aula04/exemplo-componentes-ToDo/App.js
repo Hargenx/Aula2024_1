@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Modal, TextInput, Button as Botao, Switch } from 'react-native';
-import estilos from './styles'; // Importe os estilos
+import estilos from './styles';
 
 const App = () => {
   const [tarefas, setTarefas] = useState([

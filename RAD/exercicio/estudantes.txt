@@ -1,0 +1,12 @@
+Nome: Alice
+Idade: 20
+Curso: Ciência da Computação
+
+Nome: Mario
+Idade: 22
+Curso: Engenharia Elétrica
+
+Nome: Carol
+Idade: 19
+Curso: Medicina
+
