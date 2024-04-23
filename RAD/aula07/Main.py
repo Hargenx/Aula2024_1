@@ -42,41 +42,39 @@ from pessoa import Pessoa
 from marca import Marca
 from veiculo import Veiculo
 
-# Criando uma instância da classe BancoDeDados
-banco = BancoDeDados()
+if __name__ == "__main__":
+    # Criando uma instância da classe BancoDeDados
+    banco = BancoDeDados()
+    # Conectando ao banco de dados
+    banco.conectar()
+    # Criando as tabelas necessárias
+    banco.criar_tabelas()
+    # Inserindo uma pessoa
+    pessoa1 = Pessoa(cpf=12345678900, nome="Raphael", nascimento="1984-07-26", oculos=True)
+    banco.inserir_pessoa(pessoa1)
 
-# Conectando ao banco de dados
-banco.conectar()
+    # Inserindo uma marca
+    marca1 = Marca(id=1, nome="FIAT", sigla="FIA")
+    banco.inserir_marca(marca1)
 
-# Criando as tabelas necessárias
-banco.criar_tabelas()
+    # Inserindo um veículo
+    veiculo1 = Veiculo(placa="LRW1I27", cor="Cinza", proprietario=pessoa1, marca=marca1)
+    banco.inserir_veiculo(veiculo1)
 
-# Inserindo uma pessoa
-pessoa1 = Pessoa(cpf=12345678900, nome="Raphael", nascimento="1984-07-26", oculos=True)
-banco.inserir_pessoa(pessoa1)
+    # Buscando todas as pessoas
+    print("Pessoas:")
+    for pessoa in banco.buscar_todas_pessoas():
+        print(pessoa)
 
-# Inserindo uma marca
-marca1 = Marca(id=1, nome="FIAT", sigla="FIA")
-banco.inserir_marca(marca1)
+    # Buscando todas as marcas
+    print("\nMarcas:")
+    for marca in banco.buscar_todas_marcas():
+        print(marca)
 
-# Inserindo um veículo
-veiculo1 = Veiculo(placa="LRW1I27", cor="Cinza", proprietario=pessoa1, marca=marca1)
-banco.inserir_veiculo(veiculo1)
+    # Buscando todos os veículos
+    print("\nVeículos:")
+    for veiculo in banco.buscar_todos_veiculos():
+        print(veiculo)
 
-# Buscando todas as pessoas
-print("Pessoas:")
-for pessoa in banco.buscar_todas_pessoas():
-    print(pessoa)
-
-# Buscando todas as marcas
-print("\nMarcas:")
-for marca in banco.buscar_todas_marcas():
-    print(marca)
-
-# Buscando todos os veículos
-print("\nVeículos:")
-for veiculo in banco.buscar_todos_veiculos():
-    print(veiculo)
-
-# Fechando a conexão com o banco de dados
-banco.fechar_conexao()
+    # Fechando a conexão com o banco de dados
+    banco.fechar_conexao()
