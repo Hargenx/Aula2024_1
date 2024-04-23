@@ -26,10 +26,24 @@ q1 <- function(n) {
     custo_placa * 562
   })
   
+  # Calculando métricas estatísticas
+  media_custo <- mean(custo_total)
+  desvio_padrao_custo <- sd(custo_total)
+  primeiro_quartil <- quantile(custo_total, 0.25)
+  terceiro_quartil <- quantile(custo_total, 0.75)
+  
+  # Exibindo métricas estatísticas
+  cat("Média do Custo Total de Mão-de-Obra:", media_custo, "\n")
+  cat("Desvio Padrão do Custo Total de Mão-de-Obra:", desvio_padrao_custo, "\n")
+  cat("Primeiro Quartil do Custo Total de Mão-de-Obra:", primeiro_quartil, "\n")
+  cat("Terceiro Quartil do Custo Total de Mão-de-Obra:", terceiro_quartil, "\n")
+  
+  # Plotando o histograma do custo total de mão-de-obra
   hist(custo_total, breaks = "FD", xlab = "Custo Total de Mão-de-Obra", main = "Histograma do Custo Total de Mão-de-Obra")
 }
 
 q1(10000)
+
 ```
 
 ---
@@ -45,20 +59,45 @@ q2 <- function(n) {
   # Custo variável por litro de gasolina
   custo_gasolina <- c(5.70, 7.20, 6.00)
   
-  # Amostragem Monte Carlo
-  custo_combustivel <- replicate(n, {
+  # Inicializando uma matriz para armazenar os resultados de cada iteração
+  resultados <- matrix(NA, nrow = n, ncol = 3)
+  
+  # Amostragem Monte Carlo e armazenamento dos resultados
+  for (i in 1:n) {
     carros <- sample(carros_ativos, 1)
     consumo <- sample(consumo_gasolina, 1)
     custo_litro <- sample(custo_gasolina, 1)
     custo_combustivel_dia <- carros * consumo * custo_litro
-    custo_combustivel_dia
-  })
+    resultados[i, ] <- c(carros, consumo, custo_litro)
+  }
   
-  hist(custo_combustivel, breaks = "FD", xlab = "Custo Diário de Combustível", main = "Histograma do Custo Diário de Combustível")
+  # Convertendo a matriz de resultados em um data frame
+  resultados_df <- as.data.frame(resultados)
+  colnames(resultados_df) <- c("Carros Ativos", "Consumo por Carro (litros)", "Custo por Litro (R$)")
+  
+  # Exibindo a tabela
+  cat("Tabela de Resultados:\n")
+  print(resultados_df)
+  
+  # Calculando métricas estatísticas
+  media_custo_combustivel <- mean(resultados[, 1] * resultados[, 2] * resultados[, 3])
+  desvio_padrao_custo_combustivel <- sd(resultados[, 1] * resultados[, 2] * resultados[, 3])
+  primeiro_quartil_combustivel <- quantile(resultados[, 1] * resultados[, 2] * resultados[, 3], 0.25)
+  terceiro_quartil_combustivel <- quantile(resultados[, 1] * resultados[, 2] * resultados[, 3], 0.75)
+  
+  # Exibindo métricas estatísticas
+  cat("\nMédia do Custo Diário de Combustível:", media_custo_combustivel, "\n")
+  cat("Desvio Padrão do Custo Diário de Combustível:", desvio_padrao_custo_combustivel, "\n")
+  cat("Primeiro Quartil do Custo Diário de Combustível:", primeiro_quartil_combustivel, "\n")
+  cat("Terceiro Quartil do Custo Diário de Combustível:", terceiro_quartil_combustivel, "\n")
+  
+  # Plotando o histograma do custo diário de combustível
+  hist(resultados[, 1] * resultados[, 2] * resultados[, 3], breaks = "FD", xlab = "Custo Diário de Combustível", main = "Histograma do Custo Diário de Combustível")
 }
 
 # Chamada da função q2 com 10000 iterações
 q2(10000)
+
 ```
 
 ---
@@ -66,25 +105,42 @@ Questão 3: Modelo de Lucro Total do Restaurante
 ---
 
 ```{r}
-q3 <- function(n) {
-  # Número de clientes por dia
-  clientes_por_dia <- c(40, 120, 60)
-  # Valor gasto por cliente
-  valor_gasto <- c(150, 500, 250)
-  # Lucro sobre o faturamento
-  lucro_sobre_faturamento <- c(0.15, 0.30, 0.22)
+# 3-Um investidor deseja avaliar o retorno de um investimento em um restaurante.
+#   Uma avalia ̧c ̃ao de especialistas mosstrou que:
+#    1. cada cliente gasta (150, 500, 250)
+#    2. receba a visita di ́aria de (40, 120, 60) clientes.
+#    3. o lucrosobre o faturamento  ́e de (15% ,30%, 22%)
+#  Calcule o risco do do lucro total do restaurante durante o primeiro ano de opera ̧c ̃ao,
+#  assumindo que o restaurante opera 300 dias por ano.
+
+# Definindo os dados
+gastoCliente <- c(150, 500, 250)
+clientesDiarios <- c(40, 120, 60)
+margemLucro <- c(0.15, 0.30, 0.22)
+operacaoAno <- 300
+
+# Função para calcular o lucro diário
+calcularLucroDiario <- function() {
+  gastoAleatorio <- sample(gastoCliente, 1)
+  clientesAleatorios <- sample(clientesDiarios, 1)
+  margemAleatoria <- sample(margemLucro, 1)
   
-  # Amostragem Monte Carlo
-  lucro_total <- replicate(n, {
-    clientes <- sample(clientes_por_dia, 1)
-    valor <- sample(valor_gasto, 1)
-    lucro <- sample(lucro_sobre_faturamento, 1) * clientes * valor
-    lucro * 300  # Lucro total durante o primeiro ano de operação
-  })
+  faturamentoDiario <- gastoAleatorio * clientesAleatorios
+  lucroDiario <- faturamentoDiario * margemAleatoria
   
-  hist(lucro_total, breaks = "FD", xlab = "Lucro Total no Primeiro Ano", main = "Histograma do Lucro Total no Primeiro Ano")
+  return(lucroDiario)
 }
 
-# Chamada da função q3 com 10000 iterações
-q3(10000)
+# Realizando calculo do lucro anual
+lucroAnual <- replicate(operacaoAno, calcularLucroDiario())
+
+# Calculando a média e o desvio padrão dos lucros diários
+mediaLucrosDiarios <- mean(lucroAnual)
+desvioPadraoLucrosDiarios <- sd(lucroAnual)
+
+# Calculando o risco do lucro total
+riscoLucroTotal <- desvioPadraoLucrosDiarios * sqrt(operacaoAno)
+
+# Exibindo o resultado
+cat("O risco do lucro total do restaurante durante o primeiro ano de operação é de aproximadamente:", riscoLucroTotal, "\n")
 ```
