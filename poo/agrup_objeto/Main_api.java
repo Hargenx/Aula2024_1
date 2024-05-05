@@ -1,4 +1,4 @@
-package poo.agrup_objeto;
+package agrup_objeto;
 
 public class Main_api {
     

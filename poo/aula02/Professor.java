@@ -1,4 +1,4 @@
-package poo.aula02;
+package aula02;
 
 class Professor extends Pessoa {
     private String disciplina;

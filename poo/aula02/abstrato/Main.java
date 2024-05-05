@@ -1,4 +1,4 @@
-package poo.aula02.abstrato;
+package aula02.abstrato;
 
 public class Main {
     public static void main(String[] args) {

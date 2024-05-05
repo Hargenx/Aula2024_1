@@ -1,4 +1,4 @@
-package poo.aula02.abstrato;
+package aula02.abstrato;
 
 class Gerente extends Funcionario {
     private double salarioMensal;

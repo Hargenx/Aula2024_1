@@ -1,4 +1,4 @@
-package poo.agrup_objeto;
+package agrup_objeto;
 
 public class Pedido {
     private int numero;

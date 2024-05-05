@@ -1,3 +1,5 @@
+package aula_extra_gravaArquivo_Regex;
+
 public class StringFun {
     public static void main(String[] args) {
         String str = "Raphael";

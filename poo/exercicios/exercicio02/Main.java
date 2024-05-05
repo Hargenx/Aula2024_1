@@ -1,3 +1,5 @@
+package exercicios.exercicio02;
+
 import java.io.FileWriter;
 import java.io.IOException;
 

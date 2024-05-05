@@ -1,3 +1,5 @@
+package exemplo_thread;
+
 public class ExemploDemonUserThreads {
     public static void main(String[] args) {
         // Criando uma thread de usuário

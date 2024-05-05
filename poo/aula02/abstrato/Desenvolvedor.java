@@ -1,4 +1,4 @@
-package poo.aula02.abstrato;
+package aula02.abstrato;
 
 class Desenvolvedor extends Funcionario {
     private int horasTrabalhadas;

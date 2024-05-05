@@ -1,4 +1,4 @@
-package poo.aula01;
+package aula01;
 
 class Animal {
     public void fazerSom() {

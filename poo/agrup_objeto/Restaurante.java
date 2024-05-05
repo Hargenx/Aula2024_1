@@ -1,4 +1,4 @@
-package poo.agrup_objeto;
+package agrup_objeto;
 
 import java.util.ArrayList;
 import java.util.Deque;

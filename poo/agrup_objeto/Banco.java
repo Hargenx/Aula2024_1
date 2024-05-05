@@ -1,4 +1,4 @@
-package poo.agrup_objeto;
+package agrup_objeto;
 //Vamos criar um exemplo que envolve um agrupamento de objetos. Neste caso, vamos considerar um banco que possui várias contas bancárias e precisa realizar algumas operações em conjunto.
 import java.util.ArrayList;
 import java.util.List;

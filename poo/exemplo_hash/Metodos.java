@@ -1,6 +1,4 @@
-
-
-package poo.exemplo_hash;
+package exemplo_hash;
 
 import java.util.HashMap;
 

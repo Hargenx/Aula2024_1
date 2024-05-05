@@ -1,4 +1,4 @@
-package poo.aula02.exercicio02;
+package aula02.exercicio02;
 
 public class ContaBancaria {
     private String nome;

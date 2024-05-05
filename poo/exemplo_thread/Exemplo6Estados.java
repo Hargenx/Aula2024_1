@@ -1,3 +1,5 @@
+package exemplo_thread;
+
 public class Exemplo6Estados {
         public static void main(String[] args) {
             Thread thread = new Thread(new MinhaThread());

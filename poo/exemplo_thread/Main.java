@@ -1,3 +1,5 @@
+package exemplo_thread;
+
 public class Main {
     public static void main(String[] args) {
         // Criando e iniciando a primeira thread

@@ -1,4 +1,4 @@
-package poo.aula02;
+package aula02;
 
 class Aluno extends Pessoa {
     private int matricula;

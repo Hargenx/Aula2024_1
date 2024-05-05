@@ -1,3 +1,5 @@
+package exemplo_thread;
+
 import java.util.concurrent.Semaphore;
 
 public class ExemploSinais {

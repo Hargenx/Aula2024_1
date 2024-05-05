@@ -1,4 +1,4 @@
-package poo.aula02.abstrato;
+package aula02.abstrato;
 
 abstract class Funcionario implements Pagamento {
     private String nome;

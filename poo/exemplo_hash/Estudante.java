@@ -1,4 +1,4 @@
-package poo.exemplo_hash;
+package exemplo_hash;
 
 public class Estudante {
     private int matricula;

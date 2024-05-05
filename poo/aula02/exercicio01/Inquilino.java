@@ -1,4 +1,4 @@
-package poo.aula02.exercicio01;
+package aula02.exercicio01;
 import java.util.Objects;
 
 public class Inquilino extends Pessoa {
