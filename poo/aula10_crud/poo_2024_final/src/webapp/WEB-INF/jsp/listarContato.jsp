@@ -4,6 +4,7 @@
 
     <head>
         <title>Lista de Contatos</title>
+        <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
 
     <body>
